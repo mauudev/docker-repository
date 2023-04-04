@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+
+  postgres-master:
+    container_name: postgres-master
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5436:5436"
+    environment:
+      - DATABASE_HOST=127.0.0.1
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+  
+  pgadmin-main:
+    container_name: pgadmin-main
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "123456"
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres-master
