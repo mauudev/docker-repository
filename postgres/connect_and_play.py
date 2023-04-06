@@ -1,6 +1,6 @@
 import psycopg2
 
-conn = psycopg2.connect(host="172.24.0.2", port = 5432, database="", user="postgres", password="secret")
+conn = psycopg2.connect(host="172.26.0.2", port = 5432, database="root", user="postgres", password="secret1")
 
 cur = conn.cursor()
 
